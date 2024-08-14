@@ -1,15 +1,22 @@
 {
-  "notes":
-  [
+  "notes": [
     {
       "content": "reducer defines how redux store works",
       "important": true,
-      "id": 1
+      "id": "1"
     },
     {
       "content": "state of store can contain any data",
       "important": false,
-      "id": 2
+      "id": "2"
+    },
+    {
+      "id": "ce43",
+      "content": "new note"
+    },
+    {
+      "id": "ee24",
+      "content": "another new note"
     }
   ]
 }

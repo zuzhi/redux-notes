@@ -32,4 +32,16 @@ export const initializeNotes = () => {
   }
 }
 
+export const createNote = (content) => {
+  return async (dispatch, getState) => {
+    const note = {
+      content: content
+    }
+    const saved = await noteService.save(note)
+    const notes = getState().notes
+    const newNotes = notes.concat(saved)
+    dispatch(setNotes(newNotes))
+  }
+}
+
 export default noteSlice.reducer

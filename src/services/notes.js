@@ -7,6 +7,12 @@ const getAll = async () => {
   return response.data
 }
 
+const save = async (note) => {
+  const response = await axios.post(baseUrl, note)
+  return response.data
+}
+
 export default {
-  getAll
+  getAll,
+  save
 }

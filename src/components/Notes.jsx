@@ -2,10 +2,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleImportanceOf } from '../reducers/noteReducer'
 
 const Note = ({ note, handleClick }) => {
-  return(
-    <li onClick={handleClick}>
-      {note.content}
-      <strong> {note.important ? 'important' : ''}</strong>
+
+  return (
+    <li>
+      <span onClick={handleClick} className={note.important ? 'important' : ''}>
+        {note.content}
+      </span>
     </li>
   )
 }
