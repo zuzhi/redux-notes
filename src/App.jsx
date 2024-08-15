@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import Notes from "./components/Notes"
 import { useEffect, useRef, useState } from "react"
-import { initializeNotes } from "./reducers/noteReducer"
+import { initializeNotes, saveAll } from "./reducers/noteReducer"
 import Editor from "./components/Editor"
 import NewNote from "./components/NewNote"
 
@@ -76,6 +76,7 @@ const App = () => {
         parseNote(li.innerText.trim())
       )
       console.log("Extracted Notes Array:", extractedNotes)
+      dispatch(saveAll(extractedNotes))
     } else {
       console.error("Quill instance is not available.")
     }

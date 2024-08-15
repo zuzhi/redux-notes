@@ -7,12 +7,27 @@ const getAll = async () => {
   return response.data
 }
 
-const save = async (note) => {
+const saveNote = async (content, important = false) => {
+  const note = {
+    content: content,
+    important
+  }
   const response = await axios.post(baseUrl, note)
   return response.data
 }
 
+const updateNote = async (note) => {
+  const response = await axios.patch(`${baseUrl}/${note.id}`, note)
+  return response.data
+}
+
+const deleteNote = async (id) => {
+  await axios.delete(`${baseUrl}/${id}`)
+}
+
 export default {
   getAll,
-  save
+  saveNote,
+  updateNote,
+  deleteNote
 }
